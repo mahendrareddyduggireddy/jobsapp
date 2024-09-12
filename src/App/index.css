@@ -1,0 +1,18 @@
+.employment-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.sections-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.heading {
+  font-family: "Roboto";
+}
+.section-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

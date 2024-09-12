@@ -1,0 +1,15 @@
+.card-style {
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+  border-style: solid;
+  border-color: skyblue;
+  border-width: 2px;
+  width: 90%;
+  font-family: "Roboto";
+  text-decoration: none;
+}
+.para {
+  color: "orange";
+  font-size: 18px;
+}
