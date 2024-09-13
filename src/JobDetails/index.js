@@ -22,10 +22,7 @@ class JobDetails extends Component {
       type: each.type,
     }));
 
-    const match = this.props;
-    const { id } = match.params;
-
-    this.setState({ jobsList: updatedData, param: id });
+    this.setState({ jobsList: updatedData });
   };
 
   render() {
