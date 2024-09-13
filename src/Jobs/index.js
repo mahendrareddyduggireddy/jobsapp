@@ -18,7 +18,6 @@ class Jobs extends Component {
     const updatedData = data.results.map((each) => ({
       id: each.id,
       title: each.title,
-      bookmark: "false",
     }));
     this.setState({ jobsList: updatedData });
   };
@@ -30,7 +29,7 @@ class Jobs extends Component {
         <h1 className="title">Jobs</h1>
         <ul className="jobs-list">
           {jobsList.map((each) => (
-            <JobCard card={each} key={each.id} jbs={jobsList} />
+            <JobCard card={each} key={each.id} />
           ))}
         </ul>
       </div>

@@ -1,16 +1,44 @@
+import { Component } from "react";
+
 import "./index.css";
 
-const JobDetails = (props) => {
-  const { jbsList, ids } = props;
-  console.log(jbsList);
-  const item = jbsList.filter((each) => each.id === ids);
-  const { id, title, type } = item;
-  return (
-    <div>
-      <h1>{id}</h1>
-      <p>{title}</p>
-      <p>{type}</p>
-    </div>
-  );
-};
+class JobDetails extends Component {
+  state = { jobsList: [], param: "" };
+
+  componentDidMount() {
+    this.jobsDataFunction();
+  }
+
+  jobsDataFunction = async () => {
+    const jobsData = await fetch(
+      "https://testapi.getlokalapp.com/common/jobs?page=1"
+    );
+
+    const data = await jobsData.json();
+
+    const updatedData = data.results.map((each) => ({
+      id: each.id,
+      title: each.title,
+      type: each.type,
+    }));
+
+    const match = this.props;
+    const { id } = match.params;
+
+    this.setState({ jobsList: updatedData, param: id });
+  };
+
+  render() {
+    const { jobsList, param } = this.state;
+    const jobItem = jobsList.filter((each) => each.id === param);
+    const { id, title, type } = jobItem;
+    return (
+      <div>
+        <h1>{id}</h1>
+        <p>{title}</p>
+        <p>{type}</p>
+      </div>
+    );
+  }
+}
 export default JobDetails;

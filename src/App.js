@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import JobsApp from "./App/index";
 import Jobs from "./Jobs";
 import JobDetails from "./JobDetails";
@@ -8,12 +8,12 @@ import "./App.css";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
+      <Switch>
         <Route exact path="/" element={<JobsApp />} />
-        <Route exact path="/jobs" element={<Jobs />} />
-        <Route exact path="/:id" element={<JobDetails />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/:id" element={<JobDetails />} />
+        <Route element={<NotFound />} />
+      </Switch>
     </BrowserRouter>
   );
 };
