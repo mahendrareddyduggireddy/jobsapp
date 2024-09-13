@@ -30,7 +30,7 @@ class JobsApp extends Component {
             id="job"
             onChange={this.jobsFunction}
           />
-          <label for="job">Jobs</label>
+          <label htmFor="job">Jobs</label>
           <input
             type="radio"
             name="section"
@@ -38,7 +38,7 @@ class JobsApp extends Component {
             id="book"
             onChange={this.bookmarksFunction}
           />
-          <label for="book">Bookmarks</label>
+          <label htmFor="book">Bookmarks</label>
         </div>
         <ul className="sections-container">
           {active === "jobs" ? (
